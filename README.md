@@ -151,13 +151,13 @@ _Instância de demonstração sempre disponível para testes e apresentações_
 ### 📧 Informações de Contato
 
 -   **Desenvolvedor Principal**: Lukixfer
--   **Email**: [contato@krawz.net](mailto:contato@krawz.net)
+-   **Email**: [KlausKhaus@hotmail.com](mailto:KlausKhaus@hotmail.com)
+-   **Calendário**: [Agendar Reunião](https://calendly.com/klauskhaus)
 -   **LinkedIn**: [Perfil do Desenvolvedor](#)
--   **Calendário**: [Agendar Reunião](#)
 
 ### 💬 Próximos Passos
 
-1. **Demonstração ao Vivo**: Agendamento de apresentação personalizada
+1. **Demonstração ao Vivo**: [Agendar apresentação personalizada](https://calendly.com/klauskhaus)
 2. **Proposta Detalhada**: Documentação completa de investimento
 3. **Prova de Conceito**: Desenvolvimento de features específicas
 4. **Contrato de Parceria**: Formalização da colaboração

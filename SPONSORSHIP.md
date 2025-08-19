@@ -228,7 +228,7 @@ O mercado global de jogos de cartas digitais está em **explosivo crescimento**:
 💳 **PayPal**: KlausKhaus@hotmail.com
 
 **Agenda Online:**  
-🗓️ [Calendly - Reunião de Patrocínio](https://calendly.com/krawz-partnerships)
+🗓️ [Calendly - Reunião de Patrocínio](https://calendly.com/klauskhaus)
 
 ---
 
