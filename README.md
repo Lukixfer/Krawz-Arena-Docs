@@ -122,7 +122,7 @@ Krawz Arena é um **jogo de cartas/RPG místico** onde alquimistas batalham em d
 
 ### Q4 2025
 
--   [ ] Beta público fechado
+-   [ ] Open Alpha - Acesso aberto a todos
 -   [ ] Sistema de ranking global
 -   [ ] Monetização básica
 -   [ ] Parcerias estratégicas
