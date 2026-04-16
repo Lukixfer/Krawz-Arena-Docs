@@ -13,11 +13,11 @@ Krawz Arena é um **jogo de cartas/RPG místico** onde alquimistas batalham em d
 
 ### 🎮 Experiência Única
 
--   **Combates em Tempo Real**: WebSockets para duelos fluidos e responsivos
--   **Sistema Alquímico**: Fusões e fissões que alteram permanentemente os campeões
--   **Habilidades Dinâmicas**: Mais de 50+ habilidades únicas com efeitos complexos
--   **Progressão Persistente**: Campeões evoluem e ganham poder ao longo das batalhas
--   **Economia Balanceada**: Sistema de mercado interno e progressão orgânica
+- **Combates em Tempo Real**: WebSockets para duelos fluidos e responsivos
+- **Sistema Alquímico**: Fusões e fissões que alteram permanentemente os campeões
+- **Habilidades Dinâmicas**: Mais de 50+ habilidades únicas com efeitos complexos
+- **Progressão Persistente**: Campeões evoluem e ganham poder ao longo das batalhas
+- **Economia Balanceada**: Sistema de mercado interno e progressão orgânica
 
 ## 📊 Status Atual
 
@@ -36,35 +36,35 @@ Krawz Arena é um **jogo de cartas/RPG místico** onde alquimistas batalham em d
 
 ### 🚧 Em Desenvolvimento
 
--   **Interface Mobile**: Adaptação responsiva para dispositivos móveis
--   **Sistema de Torneios**: Competições estruturadas entre jogadores
--   **Modo Espectador**: Assistir duelos de outros jogadores
--   **Chat Global**: Sistema de comunicação entre jogadores
--   **Ranking Global**: Sistema de classificação competitiva
+- **Interface Mobile**: Adaptação responsiva para dispositivos móveis
+- **Sistema de Torneios**: Competições estruturadas entre jogadores
+- **Modo Espectador**: Assistir duelos de outros jogadores
+- **Chat Global**: Sistema de comunicação entre jogadores
+- **Ranking Global**: Sistema de classificação competitiva
 
 ## 🏗️ Arquitetura Tecnológica
 
 ### Backend
 
--   **Node.js** + Express.js
--   **MySQL** para persistência
--   **WebSockets** (ws) para tempo real
--   **JWT** para autenticação
--   **Cloudinary** para assets
+- **Node.js** + Express.js
+- **MySQL** para persistência
+- **WebSockets** (ws) para tempo real
+- **JWT** para autenticação
+- **Cloudinary** para assets
 
 ### Frontend
 
--   **JavaScript Vanilla** (sem frameworks)
--   **CSS3** com animações customizadas
--   **WebSocket Client** para comunicação
--   **Responsive Design**
+- **JavaScript Vanilla** (sem frameworks)
+- **CSS3** com animações customizadas
+- **WebSocket Client** para comunicação
+- **Responsive Design**
 
 ### DevOps & Deploy
 
--   **Cloudflare Tunnel** para acesso público
--   **GitHub Actions** para CI/CD
--   **Jest** para testes unitários
--   **ESLint** para qualidade de código
+- **Cloudflare Tunnel** para acesso público
+- **GitHub Actions** para CI/CD
+- **Jest** para testes unitários
+- **ESLint** para qualidade de código
 
 ## 🎯 Oportunidades de Patrocínio
 
@@ -78,11 +78,11 @@ Krawz Arena é um **jogo de cartas/RPG místico** onde alquimistas batalham em d
 
 ### 🎁 Benefícios para Patrocinadores
 
--   **Branding Integrado**: Logo e menções na interface do jogo
--   **Campeões Personalizados**: Criação de cartas temáticas da marca
--   **Torneios Corporativos**: Eventos privados para empresas
--   **Analytics Detalhados**: Métricas de engajamento e alcance
--   **Acesso Antecipado**: Funcionalidades beta para colaboradores
+- **Branding Integrado**: Logo e menções na interface do jogo
+- **Campeões Personalizados**: Criação de cartas temáticas da marca
+- **Torneios Corporativos**: Eventos privados para empresas
+- **Analytics Detalhados**: Métricas de engajamento e alcance
+- **Acesso Antecipado**: Funcionalidades beta para colaboradores
 
 ### 💰 Planos de Investimento
 
@@ -97,42 +97,43 @@ Krawz Arena é um **jogo de cartas/RPG místico** onde alquimistas batalham em d
 
 ### 🔢 Estatísticas de Desenvolvimento
 
--   **40,000+ linhas** de código
--   **200+ commits** nos últimos 6 meses
--   **50+ habilidades** únicas implementadas
--   **15+ tipos** de campeões elementais
--   **95%+ cobertura** de testes unitários
--   **Zero downtime** na instância de demonstração
+- **40,000+ linhas** de código
+- **200+ commits** nos últimos 6 meses
+- **50+ habilidades** únicas implementadas
+- **15+ tipos** de campeões elementais
+- **95%+ cobertura** de testes unitários
+- **Zero downtime** na instância de demonstração
 
 ### 🎮 Métricas de Jogo
 
--   **1,000+ duelos** simulados com sucesso
--   **50ms** latência média em duelos
--   **99.9%** estabilidade do servidor
--   **5 segundos** tempo médio de carregamento
+- **1,000+ duelos** simulados com sucesso
+- **50ms** latência média em duelos
+- **99.9%** estabilidade do servidor
+- **5 segundos** tempo médio de carregamento
 
-## 🗺️ Roadmap 2025
+## 🗺️ Roadmap Atualizado (2026-2027)
 
-### Q3 2025 (Atual)
+_Nota: O cronograma foi readequado em 2026 para acomodar atrasos imprevistos e garantir a entrega de um produto de altíssima qualidade._
 
--   [ ] Finalização do sistema de torneios
--   [ ] Interface mobile responsiva
--   [ ] Sistema de chat integrado
--   [ ] Otimizações de performance
+### Q2/Q3 2026 (Retomada Atual)
 
-### Q4 2025
+- [ ] Finalização das features pendentes (Interface Mobile, Mercado RMT)
+- [ ] Sistema de chat integrado
+- [ ] Otimizações de performance e MVP Completo
 
--   [ ] Open Alpha - Acesso aberto a todos
--   [ ] Sistema de ranking global
--   [ ] Monetização básica
--   [ ] Parcerias estratégicas
+### Q4 2026
 
-### Q1 2026
+- [ ] Preparação da Infraestrutura RMT
+- [ ] Open Alpha - Acesso aberto a todos
+- [ ] Sistema de ranking global
+- [ ] Monetização básica
 
--   [ ] Lançamento oficial
--   [ ] Campanha de marketing
--   [ ] Eventos competitivos
--   [ ] Expansão de conteúdo
+### Q1 2027
+
+- [ ] Marketplace Beta (RMT)
+- [ ] Lançamento oficial e Campanha de marketing
+- [ ] Eventos competitivos e Torneios
+- [ ] Parcerias estratégicas
 
 ## 🎮 Demonstração
 
@@ -150,10 +151,10 @@ _Instância de demonstração sempre disponível para testes e apresentações_
 
 ### 📧 Informações de Contato
 
--   **Desenvolvedor Principal**: Lukixfer
--   **Email**: [KlausKhaus@hotmail.com](mailto:KlausKhaus@hotmail.com)
--   **Calendário**: [Agendar Reunião](https://calendly.com/klauskhaus)
--   **LinkedIn**: [Perfil do Desenvolvedor](#)
+- **Desenvolvedor Principal**: Lukixfer
+- **Email**: [KlausKhaus@hotmail.com](mailto:KlausKhaus@hotmail.com)
+- **Calendário**: [Agendar Reunião](https://calendly.com/klauskhaus)
+- **LinkedIn**: [Perfil do Desenvolvedor](#)
 
 ### 💬 Próximos Passos
 
