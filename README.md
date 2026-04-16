@@ -1,24 +1,20 @@
-# Krawz Arena: A Revolução Alquímica e Tecnológica
+﻿# Krawz Arena: A Revolução Alquímica e Tecnológica
 
 [![Geração por IA](https://img.shields.io/badge/Arte-ComfyUI_AI-blueviolet)](https://krawz.net)
-[![Status](https://img.shields.io/badge/Status-Pré_Alpha-gold)](https://krawz.net)
+[![Status](https://img.shields.io/badge/Status-Beta-gold)](https://krawz.net)
 
 **Krawz Arena** é uma plataforma inovadora de duelos estratégicos em tempo real e evolução de personagens. Combinando mecânicas profundas de RPG de cartas elementais com arte dinâmica gerada por **Inteligência Artificial**, o projeto foi desenhado para escalabilidade, baixa latência e profundo engajamento.
 
----
+## 🚀 Visão Tecnológica e Estado Atual
 
-## 🚀 Visão Tecnológica e Inovação
+A arquitetura de **Krawz Arena** foi construída visando máxima performance, retenção de jogadores e rápida capacidade de iteração. Nossa stack exclusiva garante uma experiência fluida.
 
-A arquitetura de **Krawz Arena** foi construída visando máxima performance, retenção de jogadores e rápida capacidade de iteração. Não dependemos de engines pesadas; criamos uma experiência fluida baseada em tecnologias consolidadas de Web, fundidas com a revolução da IA generativa.
-
-### ⚙️ Nossa Stack Exclusiva:
-
-*   **Node.js & Express.js (Backend Core)**: Um núcleo rápido, assíncrono e altamente escalável para gerenciar o estado da arena e a lógica hiper-rápida das partidas.
-*   **WebSockets (Rede de Baixa Latência)**: Comunicação bidirecional contínua garantindo que ataques, defesas e habilidades elementais sejam computadas e distribuídas em milissegundos (`broadcastUpdate`).
-*   **MySQL & Sistemas Persistentes**: Banco de dados relacional sólido (`mysql2`) garantindo integridade das progressões, atributos dos campeões e inventários.
-*   **Google Auth Hybrid**: Autenticação unificada, segura e sem atrito para conversão imediata de novos usuários e proteção das contas.
-*   **ComfyUI AI Generation Integrado**: Hub nativo de geração procedimental de assets artísticos. Executando localmente e integrado de forma fluida (`image_weaver.js`), os campeões evoluem visualmente sob demanda, proporcionando uma personalização sem precedentes aos usuários e reduzindo custos astronômicos com design terceirizado.
-*   **Custom Engine Frontend (Vanilla JS + fx_engine.js)**: Uma *engine* própria e ágil baseada em JavaScript Vanilla no cliente. A autoridade visual, anti-flickering e as animações de interface (como renderização de HP fluida) são rigidamente controladas pelo `fx_engine.js`. O resultado é estabilidade absoluta e performance nativa mesmo em conexões modestas.
+### ⚙️ Nossa Stack Exclusiva e Realizações Recentes:
+*   **Backend Híbrido Node/Express + MySQL**: Um núcleo rápido, assíncrono e altamente escalável. Implementamos a migração híbrida de Autenticação (Login Local + Google Auth via JWT), roteamento robusto como Listagem e Paginação de Campeões (GET /api/champions), e um robusto Sistema de Leaderboard (GET /api/leaderboard), além de Matchmaking Queue/Dequeue.
+*   **WebSockets (Rede de Baixa Latência)**: Comunicação bidirecional contínua garantindo que ataques, defesas e habilidades elementais sejam computadas e distribuídas em milissegundos.
+*   **Motor de Combate Avançado**: Operando com mais de 38 habilidades dinâmicas orquestradas sob forte rigor técnico pelo sistema de *Managers* (duel_manager, uffManager), que forçam aplicações sem manipulação direta dos estados.
+*   **Frontend (Vanilla JS + x_engine.js)**: Nossa engine própria traz estabilidade total. Introduzimos o moderno sistema **Anti-Flicker** com rigoroso controle visual via atributos (data-rendering-in-progress) na x_engine.js, evitando saltos e quebras de interface durante a carga.
+*   **ComfyUI AI Generation Integrado**: Geração de cards autêntica. Processos assíncronos gerenciam o ciclo de vida e a injeção nativa das peças visuais no game com o image_weaver.js e a forja de metamorfoses.
 
 ---
 
@@ -26,14 +22,8 @@ A arquitetura de **Krawz Arena** foi construída visando máxima performance, re
 
 Krawz Arena ultrapassa o conceito de apenas um "jogo de cartas". É um Produto de Software Completo projetado com uma cultura DevSecOps consolidada:
 
-1. **Desenvolvimento Ágil e Resiliente**: Pipeline contínuo com forte aderência a TDD. Rotinas críticas do motor de combate são protegidas por suítes de testes automatizados (`__tests__`) em ambientes rigorosos.
-2. **Arquitetura Orientada a Eventos Seguros**: Mudanças de estado nunca são diretas, mitigando trapaças e bugs. Tudo é rigorosamente moderado por *Managers* centrais (`duelState`, `buffManager`).
-3. **Poder Retentivo da IA**: Colecionismo vivo e economia circular, onde os itens visuais nunca envelhecem graças às fusões visuais dinâmicas.
+1. **Desenvolvimento Ágil e Resiliente**: Pipeline contínuo com forte aderência a TDD. Rotinas críticas do motor de combate são protegidas por dezenas de suítes de testes (__tests__).
+2. **Arquitetura Orientada a Eventos Seguros**: Mudanças de estado nunca são diretas, mitigando trapaças e bugs. O fluxo do ciclo vital de batalha é imutável no Frontend, que opera como camada de apresentação.
+3. **Poder Retentivo da IA**: Colecionismo vivo acompanhado pela evolução visual procedimental.
 
-Para patrocinadores e investidores buscando oportunidades em TCGs, Web3, ou ecossistemas de eSports impulsionados por IA, veja nosso documento de patrocínio corporativo: **[SPONSORSHIP.md](./SPONSORSHIP.md)**.
-
----
-
-### Junte-se à Revolução
-
-O mundo de Krawz Arena está preparado para o próximo estágio de sua expansão, impulsionado pela tecnologia de ponta e inovação contínua. 
+O mundo de Krawz Arena está preparado para o próximo estágio de expansão.
