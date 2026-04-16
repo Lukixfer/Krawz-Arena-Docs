@@ -1,29 +1,61 @@
-﻿# Krawz Arena: A Revolução Alquímica e Tecnológica
+# 🃏 Krawz Arena: Elevando o Padrão do Web3 & AI Gaming 🚀
 
 [![Geração por IA](https://img.shields.io/badge/Arte-ComfyUI_AI-blueviolet)](https://krawz.net)
 [![Status](https://img.shields.io/badge/Status-Beta-gold)](https://krawz.net)
+[![Investimento](https://img.shields.io/badge/Series_A-Open-brightgreen)](#)
 
-**Krawz Arena** é uma plataforma inovadora de duelos estratégicos em tempo real e evolução de personagens. Combinando mecânicas profundas de RPG de cartas elementais com arte dinâmica gerada por **Inteligência Artificial**, o projeto foi desenhado para escalabilidade, baixa latência e profundo engajamento.
+> *"A interseção perfeita entre RPG Tático, Geração de Arte por IA e Arquitetura de Ponta em Tempo Real. Não é apenas um jogo, é o próximo unicórnio do entretenimento digital."*
 
-## 🚀 Visão Tecnológica e Estado Atual
-
-A arquitetura de **Krawz Arena** foi construída visando máxima performance, retenção de jogadores e rápida capacidade de iteração. Nossa stack exclusiva garante uma experiência fluida.
-
-### ⚙️ Nossa Stack Exclusiva e Realizações Recentes:
-*   **Backend Híbrido Node/Express + MySQL**: Um núcleo rápido, assíncrono e altamente escalável. Implementamos a migração híbrida de Autenticação (Login Local + Google Auth via JWT), roteamento robusto como Listagem e Paginação de Campeões (GET /api/champions), e um robusto Sistema de Leaderboard (GET /api/leaderboard), além de Matchmaking Queue/Dequeue.
-*   **WebSockets (Rede de Baixa Latência)**: Comunicação bidirecional contínua garantindo que ataques, defesas e habilidades elementais sejam computadas e distribuídas em milissegundos.
-*   **Motor de Combate Avançado**: Operando com mais de 38 habilidades dinâmicas orquestradas sob forte rigor técnico pelo sistema de *Managers* (duel_manager, uffManager), que forçam aplicações sem manipulação direta dos estados.
-*   **Frontend (Vanilla JS + x_engine.js)**: Nossa engine própria traz estabilidade total. Introduzimos o moderno sistema **Anti-Flicker** com rigoroso controle visual via atributos (data-rendering-in-progress) na x_engine.js, evitando saltos e quebras de interface durante a carga.
-*   **ComfyUI AI Generation Integrado**: Geração de cards autêntica. Processos assíncronos gerenciam o ciclo de vida e a injeção nativa das peças visuais no game com o image_weaver.js e a forja de metamorfoses.
+**Krawz Arena** é uma plataforma disruptiva de duelos estratégicos e evolução de personagens que redefine o conceito de TCG (Trading Card Game) e RPG de arena. Com um motor de combate proprietário de ultra-baixa latência e integração nativa com inteligência artificial para geração de ativos dinâmicos, estamos construindo o ecossistema definitivo para a próxima geração de gamers e colecionadores.
 
 ---
 
-## 💼 Por Quê Investir no Krawz Arena?
+## 💎 A Oportunidade: Por Que o Krawz Arena?
 
-Krawz Arena ultrapassa o conceito de apenas um "jogo de cartas". É um Produto de Software Completo projetado com uma cultura DevSecOps consolidada:
+Não estamos construindo apenas um jogo; estamos consolidando um **Produto de Software Escalável** e uma **Propriedade Intelectual (IP) Poderosa**, fundamentada em pilares tecnológicos extremamente sólidos:
 
-1. **Desenvolvimento Ágil e Resiliente**: Pipeline contínuo com forte aderência a TDD. Rotinas críticas do motor de combate são protegidas por dezenas de suítes de testes (__tests__).
-2. **Arquitetura Orientada a Eventos Seguros**: Mudanças de estado nunca são diretas, mitigando trapaças e bugs. O fluxo do ciclo vital de batalha é imutável no Frontend, que opera como camada de apresentação.
-3. **Poder Retentivo da IA**: Colecionismo vivo acompanhado pela evolução visual procedimental.
+| Diferencial | Impacto no Mercado | Retorno Projetado |
+| :--- | :--- | :--- |
+| **🧠 IA Generativa Nativa** | Ativos infinitos e hiper-personalizáveis via ComfyUI no backend. | Redução de 90% em custos de arte 2D. Escala global instantânea. |
+| **⚡ Motor WebSocket Ultra-Rápido** | Combate em tempo real sem atrito (Node/Express + WS). | Retenção máxima de jogadores (D1, D7, D30) devido à fluidez. |
+| **🛡️ Arquitetura Anti-Cheat** | Validação State-Machine via Managers rígidos no backend. | Confiança da comunidade e viabilidade real para **eSports**. |
+| **🎨 Vanilla JS Custom Engine** | Performance absurda no client-side com Anti-Flickering. | Acessibilidade universal (Mobile, Desktop, Low-end devices). |
+| **🧪 Qualidade DevSecOps** | TDD severo, linting e CI/CD prontos (`npm run test:coverage`). | Mitigação de riscos técnicos, entregas previsíveis e seguras. |
 
-O mundo de Krawz Arena está preparado para o próximo estágio de expansão.
+---
+
+## 🗺️ Roadmap Estratégico & Expansão
+
+Nosso pipeline de desenvolvimento é agressivo, focado em tração rápida e monetização sustentável:
+
+*   **Q3 2026: Consolidação do Core & Beta Fechado** 🟢 *(Em Andamento)*
+    *   Matchmaking inteligente e Leaderboards dinâmicos.
+    *   Integração híbrida de Auth (Local + Google JWT).
+    *   Motor de combate 100% testado (38+ habilidades).
+*   **Q4 2026: Economia In-Game e IA Expandida** 🟡
+    *   Lançamento do sistema de Forja Alquímica Premium (Monetização via Microtransações).
+    *   Geração visual de cartas baseada no DNA de fusão do usuário.
+    *   Soft-Launch na América Latina.
+*   **Q1 2027: Torneios e Entrada em eSports** 🔴
+    *   Modo Espectador e Broadcasting integrado.
+    *   Ligas Sazonais Ranqueadas com premiações.
+    *   Parcerias com Guildas e Influenciadores.
+*   **Q2 2027: Escala Global & Series A** 🚀
+    *   Localização Multi-Idioma e Infraestrutura Edge-Computing.
+    *   Abertura total da API para desenvolvedores da comunidade.
+
+---
+
+## 🤝 Contato para Investidores (VCs, Anjos e Parcerias Estratégicas)
+
+O **Krawz Arena** está atualmente abrindo sua rodada de captação (Seed / Pre-Series A) para acelerar o desenvolvimento, expandir os clusters de IA e escalar as operações de aquisição de usuários (UA).
+
+Estamos prontos para demonstrações técnicas (*Tear-Downs* de Arquitetura) e discussões de *Cap Table*.
+
+**Lux Vesper**  
+Lead Developer & Diretor Executivo  
+📱 **WhatsApp:** [+55 31 98406-9315](https://wa.me/5531984069315)  
+📧 **E-mail:** KlausKhaus@hotmail.com
+
+---
+*Krawz Arena - Forjando Lendas. Codificando o Futuro.*
