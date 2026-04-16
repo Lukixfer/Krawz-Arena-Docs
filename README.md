@@ -8,6 +8,16 @@
 
 **Krawz Arena** é uma plataforma disruptiva de duelos estratégicos e evolução de personagens que redefine o conceito de TCG (Trading Card Game) e RPG de arena. Com um motor de combate proprietário de ultra-baixa latência e integração nativa com inteligência artificial para geração de ativos dinâmicos, estamos construindo o ecossistema definitivo para a próxima geração de gamers e colecionadores.
 
+## Nota Técnica para Contribuidores
+
+Este repositório de documentação complementa o projeto principal, mas a fonte canônica de arquitetura e fluxo de desenvolvimento está no repositório de código:
+
+- `../README.md` no projeto principal Krawz-Arena
+- `../STRUCTURE.md` para estrutura canônica em `src/`
+- `../docs/QUICK-ONBOARDING.md` para onboarding técnico rápido
+
+Para decisões de implementação, priorize sempre a documentação técnica do repositório principal.
+
 ---
 
 ## 💎 A Oportunidade: Por Que o Krawz Arena?
