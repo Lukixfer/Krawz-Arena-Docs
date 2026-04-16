@@ -55,7 +55,7 @@ Estamos prontos para demonstrações técnicas (*Tear-Downs* de Arquitetura) e d
 **Lux Vesper**  
 Lead Developer & Diretor Executivo  
 📱 **WhatsApp:** [+55 31 98406-9315](https://wa.me/5531984069315)  
-📧 **E-mail:** KlausKhaus@hotmail.com
+📧 **E-mail:** Lux.player@gmail.com
 
 ---
 *Krawz Arena - Forjando Lendas. Codificando o Futuro.*

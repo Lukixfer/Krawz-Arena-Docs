@@ -53,7 +53,7 @@ Nós conhecemos o valor da tecnologia bem escrita e do design voltado à receita
 **Lux Vesper**  
 Lead Developer & Diretor Executivo  
 📱 **WhatsApp:** [+55 31 98406-9315](https://wa.me/5531984069315)  
-📧 **E-mail:** KlausKhaus@hotmail.com
+📧 **E-mail:** Lux.player@gmail.com
 
 ---
 
