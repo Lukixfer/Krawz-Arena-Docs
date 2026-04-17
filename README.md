@@ -20,7 +20,17 @@ Para decisões de implementação, priorize sempre a documentação técnica do 
 
 ---
 
-## 💎 A Oportunidade: Por Que o Krawz Arena?
+## � Documentação Adicional
+
+Explore os detalhes do projeto através dos nossos documentos dedicados:
+
+- **[Recursos e Tecnologias (FEATURES.md)](FEATURES.md)**: Detalhamento do motor de combate, sistema de forja alquímica e infraestrutura em tempo real.
+- **[Roadmap Completo (ROADMAP.md)](ROADMAP.md)**: Visão aprofundada dos próximos passos, metas de desenvolvimento e expansão.
+- **[Oportunidades de Patrocínio (SPONSORSHIP.md)](SPONSORSHIP.md)**: Modelos de parceria, cotas de investimento e benefícios para patrocinadores.
+
+---
+
+## �💎 A Oportunidade: Por Que o Krawz Arena?
 
 Não estamos construindo apenas um jogo; estamos consolidando um **Produto de Software Escalável** e uma **Propriedade Intelectual (IP) Poderosa**, fundamentada em pilares tecnológicos extremamente sólidos:
 
