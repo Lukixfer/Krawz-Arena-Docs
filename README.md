@@ -25,6 +25,7 @@ Para decisões de implementação, priorize sempre a documentação técnica do 
 Explore os detalhes do projeto através dos nossos documentos dedicados:
 
 - **[Recursos e Tecnologias (FEATURES.md)](FEATURES.md)**: Detalhamento do motor de combate, sistema de forja alquímica e infraestrutura em tempo real.
+- **[Guia do Banco de Dados (DATABASE-SETUP.md)](DATABASE-SETUP.md)**: Configurações, tabelas primárias e scripts de reset/migração e manutenção massiva do jogo.
 - **[Roadmap Completo (ROADMAP.md)](ROADMAP.md)**: Visão aprofundada dos próximos passos, metas de desenvolvimento e expansão.
 - **[Oportunidades de Patrocínio (SPONSORSHIP.md)](SPONSORSHIP.md)**: Modelos de parceria, cotas de investimento e benefícios para patrocinadores.
 
