@@ -1,3 +1,5 @@
+> **Nota**: A documentação canônica de arquitetura e deploy encontra-se no repositório principal, um nível acima (\../\).
+
 # ğŸƒ Krawz Arena: Elevando o PadrÃ£o do Web3 & AI Gaming ğŸš€
 
 [![GeraÃ§Ã£o por IA](https://img.shields.io/badge/Arte-ComfyUI_AI-blueviolet)](https://krawz.net)
@@ -81,3 +83,4 @@ Lead Developer & Diretor Executivo
 ---
 
 _Krawz Arena - Forjando Lendas. Codificando o Futuro._
+
