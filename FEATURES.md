@@ -1,24 +1,31 @@
 ﻿# 🌟 Funcionalidades do Krawz Arena
 
-Abaixo as entregas tangíveis mais recentes que destacam a vitalidade tecnológica e diversidade sistêmica.
+Abaixo estão as entregas mais recentes, organizadas por bloco funcional.
 
-## Autenticação Híbrida Seguro
-- 🔑 **Google Auth (OAuth2) & Nativo**: Fluxos perfeitamente harmonizados por JWT.
-- 🛡️ **Segurança API**: Uso de Tokens para liberação de rotas REST, e handshakes via WebSocket protegidos.
+## Autenticação e Segurança
+
+- 🔑 **Google Auth (OAuth2) e login nativo**: fluxos harmonizados por JWT.
+- 🛡️ **Segurança de API**: tokens para rotas REST e handshakes WebSocket protegidos.
 
 ## Ecossistema Competitivo
-- ⚔️ **Matchmaking e Fila (Queue/Dequeue)**: Encontra oponentes em tempo real e inicia salas de duelo dedicadas.
-- 🏆 **Leaderboard Automático (GET /api/leaderboard)**: Tabela de liderança rastreando e entregando o top rank dos duelistas.
-- 📜 **Histórico de Combates**: Partidas completas salvas detalhando log de eventos e turnos.
 
-## Motor de Combate (duel_manager, uffManager)
-- 🔥 **Orquestrador de Habilidades**: Já operando com **mais de 38 Habilidades ativas e passivas** e integrações cruzadas (buffs que reagem a danos de terceiro, refletem, etc).
-- ⚙️ **Processamento Determínistico**: Backend dita as regras puras limitando cheats, validando inputs estritamente pelo manager (updateDueloState).
+- ⚔️ **Matchmaking e fila**: encontra oponentes em tempo real e inicia salas de duelo dedicadas.
+- 🏆 **Leaderboard automático**: ranking dos duelistas exposto via API.
+- 📜 **Histórico de combates**: partidas completas salvas com eventos e turnos.
 
-## Progresso e Coleção
-- 🗃️ **Paginação e Listagens Robustas (GET /api/champions)**: Controle assíncrono avançado para trazer volumes de campeões da DB via limites e offsets nativos.
-- 🎨 **Forge IA Nativo**: Geração e injeção assíncrona on-the-fly (image_weaver.js) rodando scripts ComfyUI baseados nos atributos de transformação.
+## Motor de Combate
+
+- 🔥 **Orquestrador de habilidades**: mais de 38 habilidades ativas e passivas integradas ao sistema.
+- ⚙️ **Processamento determinístico**: o backend dita as regras e valida as ações pelo manager.
+
+## Economia e Coleção
+
+- 💰 **Venda integral no nível 6**: a carta retorna para a Mão do Jogador e pode ser vendida por 100% do valor acumulado.
+- 💸 **Saque com fee de 10%**: a taxa é aplicada apenas no saque, preservando a economia interna.
+- 🗃️ **Histórico de saques**: transações persistidas para consulta e auditoria.
+- 🎨 **Forge IA nativo**: geração assíncrona com ComfyUI baseada nos atributos de transformação.
 
 ## Frontend Imersivo e Sólido
-- 🎬 **fx_engine.js Superior**: HP e dano com interpolações precisas fluindo com suavidade matemática.
-- 🚫 **Sistema Anti-Flickering**: Renderização de cards em Vanilla JS não pisca com as idas e vindas de payloads WebSocket graças ao data-rendering-in-progress. A interface responde solidamente.
+
+- 🎬 **fx_engine.js**: HP e dano com interpolações precisas.
+- 🚫 **Sistema anti-flickering**: renderização de cards sem piscadas durante atualizações WebSocket.
