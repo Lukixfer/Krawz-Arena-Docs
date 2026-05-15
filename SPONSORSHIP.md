@@ -1,60 +1,62 @@
-# 🌟 Oportunidade Exclusiva de Patrocínio e Investimento: Krawz Arena
+# Sponsorship e Parcerias
 
-[![Oportunidade de Investimento](https://img.shields.io/badge/Investment-Seed_Round-success)](#)
-[![Engajamento Direto](https://img.shields.io/badge/B2B-Partnerships-blue)](#)
+Este documento apresenta formas objetivas de apoiar o Krawz Arena durante o ciclo atual de crescimento técnico e de produto.
 
-Investir no **Krawz Arena** é posicionar o seu capital e a sua marca na vanguarda da revolução do entretenimento digital. Somos pioneiros na união sinérgica entre **Batalhas de RPG Táticas**, **Geração de Imagens Procedurais via IA (ComfyUI)** e uma **Arquitetura Web Real-Time de Alta Performance**.
+## O que o projeto já entrega hoje
 
-Este não é um pitch comum; é o convite para fazer parte do próximo grande fenômeno dos games competitivos.
+- Backend em Node.js/Express com WebSocket e MySQL
+- Gameplay com progressão de cartas e economia funcional
+- Fluxo de pagamentos e saque com controles operacionais
+- Chat global com moderação
+- Base de testes automatizados em execução contínua
 
----
+## Formatos de parceria
 
-## 📈 Por Que o Krawz Arena é um Ativo de Alto Valor?
+### 1) Patrocínio de comunidade
 
-Nossa infraestrutura técnica e de design de produto foi forjada para escalar, reter e monetizar:
+Foco em apoiar torneios de comunidade, conteúdo educacional e divulgação.
 
-> _"O Krawz Arena não depende de engines mastodônticas. Ele é leve, implacável e hiper-tecnológico. Com uma stack Node.js WebSocket no Backend e um client-side Vanilla JS ultra-otimizado (Zero-Flicker com `fx_engine.js`), criamos um ecossistema à prova do futuro."_
+Contrapartidas possíveis:
 
-### 💡 Casos de ROI e Integração para Parceiros B2B e Investidores
+- Menção em materiais públicos de documentação
+- Inserção de marca em ativos oficiais de comunicação
+- Relatórios periódicos de execução do plano patrocinado
 
-| Modalidade                                                 | A Proposta de Valor                                                                                                                                                             | O Retorno Estratégico (ROI)                                                                                                                                                                             |
-| :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **🤖 AI Branding Partner (Patrocínio In-Game Generativo)** | Sua marca integrada diretamente aos modelos de IA do jogo. Heróis e elementos forjados pelos players carregarão a **aura e a paleta de cores exclusivas** do seu _"brandbook"_. | **Branding Orgânico Profundo.** O jogador cria e deseja ativamente os ativos que carregam a sua identidade. Engajamento horas-fio (LTV altíssimo).                                                      |
-| **🏟️ Guardião da Arena (Naming Rights e eSports)**         | Visibilidade imersiva e dinâmica durante as partidas de maior retenção (Rankeds e Torneios). Sua marca brilha nos painéis da UI no ápice das animações de combate.              | **Exposição Estupenda.** Picos de visualizações simultâneas alavancados pela dopamina da vitória e sincronia de WebSockets via Broadcast.                                                               |
-| **💼 Partnership Co-Fundador (Venture Capital & Anjos)**   | Acesso total ao equity e métricas de crescimento. Foco na expansão agressiva das _Microtransações de Forja Alquímica_ e escala global.                                          | **Revenue Share & Valorização de IP.** ROI direto derivado de um modelo econômico previsível, suportado por uma bateria de testes (`TDD/Smoke Health`) que garante Risco Zero de quebras catastróficas. |
+### 2) Patrocínio técnico
 
----
+Foco em infraestrutura e qualidade técnica.
 
-## 🗺️ Roadmap de Tração Técnica e Comercial
+Escopo típico:
 
-Nosso alinhamento entre código e crescimento comercial é claro e metódico:
+- Ambientes de teste e observabilidade
+- Suporte a pipelines de build, testes e documentação
+- Financiamento de ciclos de hardening de módulos críticos
 
-- **Q3 2026: Estabilidade Absoluta & Foundation** ✅
-    - Motor Híbrido Node/MySQL otimizado.
-    - Motor de Combate com validação robusta fechada via API Limits.
-- **Q4 2026: Monetização Ativa (The Alchemy Forge)** 💰
-    - Microtransações ligadas à geração de arte por Inteligência Artificial (Up-sells infinitos de customização).
-    - Lançamento de campanhas de tráfego pago focado em CAC baixo através do _Google Auth Hybrid_ (Onboarding instantâneo).
-- **Q1 2027: Ecossistema Competitivo** 🏆
-    - Circuitos Oficiais de Arenas com patrocínios de marcas parceiras inseridas na UI.
-    - Expansão da infra de IA para suprir picos massivos de geração 24/7.
-- **Q2 2027: Internacionalização & Series A** 🌎
-    - Rollout global com instâncias geolocalizadas.
-    - Avaliação (Valuation) alvo amplificada por múltiplos usuários e retenção consolidada.
+### 3) Parceria estratégica de produto
 
----
+Foco em acelerar roadmap de funcionalidades e alcance de público.
 
-## 🤝 Vamos Fechar Negócio?
+Escopo típico:
 
-Nós conhecemos o valor da tecnologia bem escrita e do design voltado à receita. Nossa infraestrutura suporta escrutínio rigoroso e estamos prontos para apresentar o plano de negócios e as métricas de arquitetura.
+- Co-produção de features específicas
+- Campanhas conjuntas com creators/comunidades
+- Planejamento de lançamentos por milestones
 
-**Garanta seu espaço na vanguarda do Krawz Arena.** Entre em contato diretamente com o head do projeto para uma rodada de conversas privadas:
+## Diretrizes de transparência
 
-**Lux Vesper**  
-Lead Developer & Diretor Executivo  
-📱 **WhatsApp:** [+55 31 98406-9315](https://wa.me/5531984069315)  
-📧 **E-mail:** Lux.player@gmail.com
+- Escopo da parceria documentado por milestones
+- Prestação de contas por entregas e status técnico
+- Priorização de estabilidade e segurança operacional
 
----
+## Critérios para novas parcerias
 
-_Elevando o LTV. Minimizando o CAC. Revolucionando a Mídia Interativa._
+- Alinhamento com visão de produto de longo prazo
+- Viabilidade técnica no ciclo de desenvolvimento atual
+- Impacto positivo para comunidade e sustentabilidade do projeto
+
+## Contato
+
+Para abrir conversa sobre patrocínio/parceria:
+
+- WhatsApp: [+55 31 98406-9315](https://wa.me/5531984069315)
+- E-mail: Lukix.Player@gmail.com

@@ -1,39 +1,51 @@
-﻿# 🗺️ Roadmap de Desenvolvimento - Krawz Arena
+﻿# Roadmap Público
 
-> _"A jornada alquímica rumo à perfeição digital"_
+Este roadmap descreve os próximos passos de produto e engenharia com foco em entregas verificáveis.
 
-## 🎯 Visão e Progresso Contínuo
+## Status atual
 
-**Missão:** Estabelecer Krawz Arena como **referência mundial** em jogos de cartas estratégicos, combinando inovação tecnológica nativa e IA.
+- Core de duelo e progressão estável
+- Economia principal operando (venda, saldo e saque)
+- Chat global com moderação entregue
+- Cobertura de testes em crescimento contínuo
 
-## 📊 Status Atual -> Entrega e Refinamento Tecnológico
+## Ciclo atual (Q2-Q3 2026)
 
-Com a base estabilizada, muitas das grandes promessas já foram concretizadas.
+### 1) Estabilidade operacional
 
-### ✅ **Core Completo e Tech Stack Entregues** (100%)
-- ✅ **Setup Híbrido Node/Express + Vanilla JS**: Organização robusta de pastas e separação de responsabilidades.
-- ✅ **Motor de Combate e Buffs Avançados**: Motor lidando com mais de 38 habilidades ativas/passivas (uffManager), impedindo manipulação de estados não-padronizada.
-- ✅ **Base de Dados Escalonável (MySQL)**: Histórico de duelos, persistência de atributos cruzados com JWT Auth e Google Auth Integrado.
-- ✅ **Matchmaking e Salas Real-time (WebSockets)**: Filas Queue/Dequeue 100% operacionais com robusto controle de sessão e desconexões.
-- ✅ **Integração de IA (ComfyUI)**: Cards dinâmicos e fluidos integrados nativamente com image_weaver.js.
-- ✅ **Frontend Anti-Flicker**: Integração visual guiada pela autoridade pura da aba (HP/Animação gerenciado pelo x_engine.js).
-- ✅ **Leaderboard e Campeões**: APIs consistentes, listagem e paginação entregues (GET /api/leaderboard, GET /api/champions).
+- Consolidar monitoramento de pagamentos e rotas de saúde
+- Continuar hardening de WebSocket para cenários de alta carga
+- Fechar lacunas de cobertura em módulos utilitários prioritários
 
-### 🟡 **Em Progresso / Próximos Passos (Scaling e UX)**
-- 🟡 Melhoria no suporte e escalonamento dos WebSockets (Sharding e Microservices passíveis).
-- 🟡 Adição de novas métricas de pareamento no Matchmaking.
-- 🟡 Ampliação do suporte a Guildas e Torneios.
-- 🟡 Implementação de Mercado RMT (Real Money Trading).
+### 2) Experiência de jogo
 
----
+- Refinar UX da Mão do Jogador e fluxo de retorno à fila
+- Melhorar feedback visual de combate (HP, efeitos e eventos)
+- Ajustar mensagens e estados de moderação no chat global
 
-## 🚀 Próximas Entregas Planejadas
+## Próximo ciclo (Q3-Q4 2026)
 
-### **Q3/Q4 - Expansão de Habilidades e IA**
-- [ ] Ampliar engine para 50+ habilidades funcionais e interconectadas.
-- [ ] Adicionar customização em tempo real de geração de IA de acordo com os Status/Elementos.
+### 3) Competitivo e retenção
 
-### **Expansão Futura - RMT e Torneios**
-- [ ] Torneios globais automatizados.
-- [ ] Interface de Marketplace RMT controlada e segura limitando *fraud-rates*.
-- [ ] Infraestrutura estrita e otimização massiva de instâncias.
+- Evoluir leaderboard com filtros e métricas sazonais
+- Estruturar base para torneios e eventos recorrentes
+- Introduzir objetivos de progressão de médio prazo para jogadores
+
+### 4) Plataforma e comunidade
+
+- Expandir documentação pública e exemplos de integração
+- Preparar trilha de contribuições externas com padrões mais claros
+- Publicar materiais visuais oficiais (screenshots e diagramas)
+
+## Futuro (2027)
+
+- Modo espectador
+- Torneios organizados com calendário
+- Novas camadas sociais (amizades e desafios diretos)
+- Evolução de monetização com segurança operacional
+
+## Princípios de execução
+
+- Priorizar estabilidade sem quebrar fluxo principal de duelo
+- Entregar incrementalmente com testes automatizados
+- Evitar refatorações amplas sem ganho objetivo de produto

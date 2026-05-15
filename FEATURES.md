@@ -1,31 +1,52 @@
-﻿# 🌟 Funcionalidades do Krawz Arena
+﻿# Features do Produto
 
-Abaixo estão as entregas mais recentes, organizadas por bloco funcional.
+Este documento separa o que está implementado hoje do que está no backlog.
 
-## Autenticação e Segurança
+## Implementado
 
-- 🔑 **Google Auth (OAuth2) e login nativo**: fluxos harmonizados por JWT.
-- 🛡️ **Segurança de API**: tokens para rotas REST e handshakes WebSocket protegidos.
+### Gameplay e combate
 
-## Ecossistema Competitivo
+- Arena com duelos em tempo real
+- Motor de combate com buffs/debuffs e resolução no backend
+- Progressão de carta por níveis
+- Sistema de habilidades abrangente com alta cobertura de testes
 
-- ⚔️ **Matchmaking e fila**: encontra oponentes em tempo real e inicia salas de duelo dedicadas.
-- 🏆 **Leaderboard automático**: ranking dos duelistas exposto via API.
-- 📜 **Histórico de combates**: partidas completas salvas com eventos e turnos.
+### Mão do Jogador e economia
 
-## Motor de Combate
+- Cartas nível 6 vão para a Mão do Jogador
+- `GET /api/champions/hand` para listar cartas disponíveis
+- `POST /api/champions/:id/return-to-combat` para voltar à fila
+- `POST /api/champions/:id/sell` para vender carta com 100% do valor acumulado
+- `POST /api/champions/withdraw` para saque com taxa de 10%
 
-- 🔥 **Orquestrador de habilidades**: mais de 38 habilidades ativas e passivas integradas ao sistema.
-- ⚙️ **Processamento determinístico**: o backend dita as regras e valida as ações pelo manager.
+### Pagamentos e compliance operacional
 
-## Economia e Coleção
+- Fluxo de depósito PIX com integração Asaas + modo demo
+- Auditoria de pagamentos e endpoints de monitoramento
+- Idempotência de confirmação de pagamento para evitar crédito duplicado
 
-- 💰 **Venda integral no nível 6**: a carta retorna para a Mão do Jogador e pode ser vendida por 100% do valor acumulado.
-- 💸 **Saque com fee de 10%**: a taxa é aplicada apenas no saque, preservando a economia interna.
-- 🗃️ **Histórico de saques**: transações persistidas para consulta e auditoria.
-- 🎨 **Forge IA nativo**: geração assíncrona com ComfyUI baseada nos atributos de transformação.
+### Social e moderação
 
-## Frontend Imersivo e Sólido
+- Chat global via WebSocket
+- Rate limit por jogador/sessão
+- Comandos de moderação do Game Master (`/mod mute`, `/mod unmute`, `/mod kick`, `/mod clear`)
 
-- 🎬 **fx_engine.js**: HP e dano com interpolações precisas.
-- 🚫 **Sistema anti-flickering**: renderização de cards sem piscadas durante atualizações WebSocket.
+### Plataforma técnica
+
+- API REST em Express com organização por rotas e serviços
+- Persistência em MySQL
+- Comunicação em tempo real com `ws`
+- Testes automatizados cobrindo backend e frontend
+
+## Indicadores técnicos atuais
+
+- 538 testes passando
+- `PixService.js` com cobertura elevada após hardening
+- `websocket_manager.js` com cobertura elevada após ciclo de estabilidade
+
+## Backlog próximo
+
+- Torneios e modo espectador
+- Melhorias adicionais de branch coverage no WebSocket
+- Evolução de telemetria pública de produto (dashboards)
+- Novas superfícies sociais (amizades/desafios diretos)
