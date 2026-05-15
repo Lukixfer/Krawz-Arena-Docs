@@ -52,6 +52,20 @@ A pasta `assets/screenshots/` pode receber capturas de:
 - Chat global com moderação
 - Fluxo econômico (venda/saque)
 
+### Galeria atual
+
+As capturas abaixo foram geradas em ambiente local de desenvolvimento.
+
+![Portal de acesso](assets/screenshots/01-portal-acesso.png)
+
+![Perfil com sessão inválida](assets/screenshots/02-perfil-sessao-invalida.png)
+
+![Crônicas da Arena](assets/screenshots/03-cronicas-arena.png)
+
+![Overlay de manutenção](assets/screenshots/04-overlay-manutencao.png)
+
+![Frontend Vite login](assets/screenshots/05-frontend-vite-login.png)
+
 ## Para contribuidores
 
 A fonte canônica de implementação está no repositório principal do código. Este repositório público prioriza conteúdo curado para consumo externo.
