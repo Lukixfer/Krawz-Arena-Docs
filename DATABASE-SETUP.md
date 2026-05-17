@@ -1,71 +1,100 @@
-# 🗄️ Guia de Configuração e Manutenção do Banco de Dados
+# Guia de Configuração e Manutenção do Banco de Dados
 
 O Krawz Arena utiliza **MySQL** como banco de dados relacional para garantir a persistência segura dos atributos dos campeões, histórico de partidas e evolução de contas.
 
-Este guia é direcionado a desenvolvedores e administradores de sistema que precisam configurar o ambiente local ou realizar manutenções nas instâncias de banco de dados.
+Este guia é direcionado a desenvolvedores e administradores de sistema que precisam configurar o ambiente local ou realizar manutenções.
 
-## 🛠️ Configuração Inicial (Setup)
+## Configuração Inicial
 
-### 1. Requisitos
+### Requisitos
 
 - MySQL Server 8.0+
 - Node.js configurado no ambiente
-- Arquivo `.env` corretamente preenchido na raiz do projeto:
+- Arquivo `.env` corretamente preenchido na raiz do projeto
+
+> **Atenção:** A variável de banco é `DB_DATABASE`, não `DB_NAME`.
 
 ```env
 DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
-DB_NAME=krawz_arena
+DB_DATABASE=krawz_arena
 ```
 
-### 2. Estrutura DDL
+### Tabelas Principais
 
-As tabelas principais do sistema incluem:
+| Tabela                           | Descrição                                                                   |
+| -------------------------------- | --------------------------------------------------------------------------- |
+| `jogadores`                      | Perfil, saldo KK, autenticação Google, link de afiliado                     |
+| `campeoes`                       | DNA, nível, atributos, status, URL de arte, total_ressurreicoes             |
+| `duelos`                         | Partidas ativas ou recém concluídas                                         |
+| `historico_duelos`               | Log completo de turnos e resultados (analytics)                             |
+| `transacoes_saque`               | Histórico de saques PIX com fee de 10%                                      |
+| `transacoes_deposito_pix`        | Cobranças PIX geradas e seu status de confirmação                           |
+| `audit_pagamentos`               | Auditoria de todas as operações financeiras (IP, user-agent, referência)    |
+| `transacoes_comissao_afiliado`   | Comissões de 5% pagas ao afiliado por saque do indicado                     |
+| `torneira_ads`                   | Anúncios e campanhas disponíveis no faucet                                  |
+| `torneira_claims`                | Histórico de KK creditado por visualização de anúncio                       |
+| `matchmaking_stats`              | Estatísticas de matchmaking por jogador                                      |
 
-- `campeoes`: Armazena o DNA, nível, atributos base, bônus permanentes e URL de arte (ComfyUI).
-- `duelos`: Registra as partidas ativas ou recém concluídas.
-- `historico_duelos` (Opcional/Analytics): Log completo de turnos e status de duelos passados.
-- `usuarios`: Dados de login, carteira e autenticação OAuth.
-
-_(Nota: O projeto utiliza Pool de conexões via `mysql2/promise` exportado em `@db/database`)_.
+O projeto utiliza pool de conexões via `mysql2/promise` exportado em `@db/database`.
 
 ---
 
-## 🧹 Scripts de Reset e Manutenção (Wipes)
+## Migrações
 
-Durante o desenvolvimento (Alpha/Beta) ou na transição de Temporadas Sazonais, é comum precisar redefinir o estado do jogo. Nós construímos uma suíte de scripts em NodeJS na raiz do projeto para realizar **Wipes** controlados sem precisar de acesso direto ao console SQL.
+As migrações são scripts Node.js em `scripts/migrations/`. Execute-as em ordem:
+
+```bash
+npm run migrate:pix                  # transacoes_deposito_pix
+npm run migrate:audit-pagamentos     # audit_pagamentos
+npm run migrate:torneira             # torneira_ads, torneira_claims
+npm run migrate:torneira-embeds      # suporte a embed_html/url
+npm run migrate:torneira-postback    # campo postback_provider
+npm run migrate:terms                # termos_aceitos_em em jogadores
+npm run migrate:fallback-webp        # corrige fallback de imagens WebP
+```
+
+> Migrações de afiliados e `matchmaking_stats` são aplicadas automaticamente pelo `server.js` na inicialização.
+
+---
+
+## Scripts de Reset e Manutenção
 
 ### Resets de Progressão (Wipes de Temporada)
 
-1. **Reset Completo (Nível + Elemento + Bônus) ⭐ Recomendado**
-    - **Comando:** `npm run wipe:nivel-elemento`
-    - **Script:** `reset_nivel_elemento.js`
-    - **O que faz:** Volta todos os campeões para o Nível 1. Zera bônus de HP herdado, ataque e defesa permanentes. Reseta a classe elemental de todos para `Sulphur`. Limpa a tabela de `duelos` e o estado atual em memória.
+**Reset Completo (Nível + Elemento) — Recomendado**
 
-2. **Reset Estrutural Base**
-    - **Script:** `reset_campeoes.js`
-    - **O que faz:** Realiza um wipe semelhante, focando na zeragem dos bônus e retorno ao nível 1, mas preservando certas características não atreladas a temporadas.
+```bash
+npm run wipe:nivel-elemento
+```
 
-3. **Reset Direto (Safe Mode para Novos Deploys)**
-    - **Script:** `reset_direto.js`
-    - **O que faz:** Verifica dinamicamente quais tabelas existem no seu banco de dados antes de tentar os `TRUNCATE` ou `UPDATE`. Perfeito para rodar logo após a primeira migração de tabelas.
+Volta todos os campeões para Lv1, zera bônus permanentes, reseta elemento para `Sulphur` e limpa a tabela de duelos ativos.
 
-### Manipulação de Elementos (Forja / Balanceamento)
+### Manipulação de Elementos
 
-Se você estiver testando o motor de combate e precisar garantir que a massa de campeões tenha uma distribuição justa de elementos, use as ferramentas de Elementos:
+**Randomização equilibrada (Fisher-Yates):**
 
-1. **Randomização Equilibrada**
-    - **Comando:** `npm run random:elementos-basicos`
-    - **Script:** `randomizar_elementos_basicos.js`
-    - **O que faz:** Usa algoritmo Fisher-Yates para embaralhar os 3 elementos básicos (Sulphur, Hydrargyrum, Natrium) garantindo que 33% da base de campeões fique em cada categoria.
+```bash
+npm run random:elementos-basicos
+```
 
-2. **Distribuição Determinística**
-    - **Comando:** `npm run wipe:elementos`
-    - **Script:** `wipe_elementos_basicos.js`
-    - **O que faz:** Distribui os elementos fixamente via `ID % 3`. Útil para testes automatizados reproduzíveis.
+Distribui Sulphur, Hydrargyrum e Natrium em ~33% cada.
 
-## 🛡️ Notas de Segurança e Cloud
+### Torneira — Limpeza de Placeholders
 
-- Os arquivos `.sql` e ferramentas como `reset_simples.js` (que contêm credenciais hardcoded) JAMAIS devem subir para instâncias de nuvem. Utilize apenas chamadas orientadas a `.env`.
-- Rotinas de manipulação do banco em produção devem preferencialmente passar por `cliente_reset.js` (que simula chamadas em Endpoints autenticados via JWT com roles de Admin), garantindo o rastreio da operação no servidor em Node.js.
+```bash
+npm run torneira:wipe-placeholders:dry   # pré-visualização
+npm run torneira:wipe-placeholders       # executa a limpeza
+```
+
+Remove anúncios placeholder sem orçamento real inseridos pelo seed antigo.
+
+---
+
+## Notas de Segurança
+
+- Nunca commite credenciais. Use exclusivamente variáveis de ambiente via `.env`.
+- Operações de wipe em produção devem ser executadas via endpoints autenticados com JWT de Admin ou diretamente pelo DBA com acesso controlado.
+- As migrações que alteram tabelas financeiras (`transacoes_saque`, `transacoes_deposito_pix`) requerem permissão `ALTER` no usuário MySQL de aplicação — execute com usuário DBA se necessário.

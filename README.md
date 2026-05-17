@@ -1,8 +1,8 @@
 # Krawz Arena Docs
 
-[![Status](https://img.shields.io/badge/Status-Alpha-orange)](#)
+[![Status](https://img.shields.io/badge/Status-Alpha%200.1.0-orange)](#)
 [![Stack](https://img.shields.io/badge/Stack-Node%20%2B%20Express%20%2B%20WS-blue)](#)
-[![Testes](https://img.shields.io/badge/Testes-538%20passando-brightgreen)](#)
+[![Testes](https://img.shields.io/badge/Testes-64%2B%20arquivos-brightgreen)](#)
 
 Repositório público de documentação do Krawz Arena, um card game/RPG com combate em tempo real, economia in-game e integração com geração de imagem por IA.
 
@@ -10,11 +10,13 @@ Este repositório é focado em apresentação técnica e produto para comunidade
 
 ## O que já está entregue
 
-- Combate em tempo real com WebSocket
-- Sistema de habilidades com alta cobertura de testes
+- Combate em tempo real com WebSocket e 38+ habilidades únicas (incluindo ressurreição)
+- Sistema de habilidades com alta cobertura de testes (64+ arquivos de teste)
 - Progressão de cartas com ciclo da Mão do Jogador no nível 6
-- Economia com venda de cartas, saldo interno e saque PIX
-- Chat global com moderação de Game Master
+- Economia com venda de cartas, depósito PIX, saldo interno e saque PIX com fee
+- Programa de afiliados com comissão de 5% sobre saques
+- Torneira — sistema de faucet publicitário onde jogadores ganham KK visualizando anúncios
+- Chat global via WebSocket com moderação de Game Master
 - API REST organizada em rotas e serviços
 
 ## Navegação rápida
@@ -30,10 +32,11 @@ Este repositório é focado em apresentação técnica e produto para comunidade
 
 - Backend: Node.js + Express + MySQL + ws
 - Frontend: Vanilla JavaScript
-- Testes automatizados: 538 passando
+- Testes automatizados: 64+ arquivos de teste cobrindo backend e frontend
 - Destaques de cobertura recentes:
     - `PixService.js`: 97.54%
     - `websocket_manager.js`: 86.87%
+    - `TorneiraService.js`: alta cobertura via suite dedicada
 
 ## Execução local
 
@@ -50,7 +53,9 @@ A pasta `assets/screenshots/` pode receber capturas de:
 - Arena em duelo ao vivo
 - Mão do Jogador (nível 6)
 - Chat global com moderação
-- Fluxo econômico (venda/saque)
+- Fluxo econômico (depósito PIX, venda, saque)
+- Torneira com anúncio ativo
+- Painel de afiliados
 
 ### Galeria atual
 
