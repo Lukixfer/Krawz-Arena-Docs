@@ -67,25 +67,25 @@ Todas as chamadas protegidas requerem o header:
 
 ## 💰 Pagamentos PIX
 
-| Método | Rota                                   | Descrição                                                             | Auth |
-| ------ | -------------------------------------- | --------------------------------------------------------------------- | ---- |
-| `POST` | `/api/payments/pix/deposito`           | Gera cobrança PIX (1 BRL = 1 KK, mínimo 5 BRL).                      | Sim  |
-| `POST` | `/api/payments/pix/webhook`            | Webhook de confirmação de pagamento (Asaas/providers).                | Não  |
-| `POST` | `/api/payments/pix/demo/confirmar`     | Confirma pagamento manualmente (apenas fora de produção).             | Não  |
-| `GET`  | `/api/payments/pix/status/:externalId` | Status de uma cobrança PIX.                                           | Sim  |
+| Método | Rota                                   | Descrição                                                 | Auth |
+| ------ | -------------------------------------- | --------------------------------------------------------- | ---- |
+| `POST` | `/api/payments/pix/deposito`           | Gera cobrança PIX (1 BRL = 1 KK, mínimo 5 BRL).           | Sim  |
+| `POST` | `/api/payments/pix/webhook`            | Webhook de confirmação de pagamento (Asaas/providers).    | Não  |
+| `POST` | `/api/payments/pix/demo/confirmar`     | Confirma pagamento manualmente (apenas fora de produção). | Não  |
+| `GET`  | `/api/payments/pix/status/:externalId` | Status de uma cobrança PIX.                               | Sim  |
 
 ---
 
 ## 📣 Torneira — Ad Faucet
 
-| Método | Rota                                | Descrição                                                     | Auth |
-| ------ | ----------------------------------- | ------------------------------------------------------------- | ---- |
-| `GET`  | `/api/torneira/ads`                 | Lista anúncios ativos disponíveis para o jogador.             | Sim  |
-| `GET`  | `/api/torneira/stats`               | Estatísticas diárias de claims do jogador.                    | Sim  |
-| `POST` | `/api/torneira/claim`               | Registra visualização de anúncio e credita KK.                | Sim  |
-| `GET`  | `/api/torneira/campaigns/mine`      | Lista campanhas criadas pelo jogador.                         | Sim  |
-| `POST` | `/api/torneira/campaigns/youtube`   | Cria campanha YouTube com orçamento em KK.                    | Sim  |
-| `GET`  | `/api/torneira/postback/:provider`  | Callback S2S de rede de anúncios (validação por segredo env). | Não  |
+| Método | Rota                               | Descrição                                                     | Auth |
+| ------ | ---------------------------------- | ------------------------------------------------------------- | ---- |
+| `GET`  | `/api/torneira/ads`                | Lista anúncios ativos disponíveis para o jogador.             | Sim  |
+| `GET`  | `/api/torneira/stats`              | Estatísticas diárias de claims do jogador.                    | Sim  |
+| `POST` | `/api/torneira/claim`              | Registra visualização de anúncio e credita KK.                | Sim  |
+| `GET`  | `/api/torneira/campaigns/mine`     | Lista campanhas criadas pelo jogador.                         | Sim  |
+| `POST` | `/api/torneira/campaigns/youtube`  | Cria campanha YouTube com orçamento em KK.                    | Sim  |
+| `GET`  | `/api/torneira/postback/:provider` | Callback S2S de rede de anúncios (validação por segredo env). | Não  |
 
 ---
 
@@ -99,11 +99,11 @@ Todas as chamadas protegidas requerem o header:
 
 ## 🪦 Cemitério
 
-| Método | Rota                    | Descrição                                     | Auth |
-| ------ | ----------------------- | --------------------------------------------- | ---- |
-| `GET`  | `/api/cemetery`         | Lista cartas do jogador no cemitério.         | Sim  |
-| `POST` | `/api/cemetery/buy/:id` | Ressuscita uma carta derrotada (custo: 1 KK). | Sim  |
-| `GET`  | `/api/cemetery/public`  | Cemitério público — últimas cartas derrotadas.| Não  |
+| Método | Rota                    | Descrição                                      | Auth |
+| ------ | ----------------------- | ---------------------------------------------- | ---- |
+| `GET`  | `/api/cemetery`         | Lista cartas do jogador no cemitério.          | Sim  |
+| `POST` | `/api/cemetery/buy/:id` | Ressuscita uma carta derrotada (custo: 1 KK).  | Sim  |
+| `GET`  | `/api/cemetery/public`  | Cemitério público — últimas cartas derrotadas. | Não  |
 
 ---
 
@@ -118,13 +118,13 @@ Todas as chamadas protegidas requerem o header:
 
 ## 🩺 Monitoramento
 
-| Método | Rota                    | Descrição                                         | Auth          |
-| ------ | ----------------------- | ------------------------------------------------- | ------------- |
-| `GET`  | `/api/monitor/health`   | Health check geral do sistema.                    | Não           |
-| `GET`  | `/api/monitor/websocket`| Status do hub WebSocket (conexões, fila).         | Não           |
-| `GET`  | `/api/monitor/forja`    | Status do ComfyUI e fila de geração de imagens.   | Não           |
-| `GET`  | `/api/monitor/financial`| Métricas financeiras operacionais.                | Token interno |
-| `GET`  | `/arena-status`         | Estado atual da arena (fila, duelo em andamento). | Não           |
+| Método | Rota                     | Descrição                                         | Auth          |
+| ------ | ------------------------ | ------------------------------------------------- | ------------- |
+| `GET`  | `/api/monitor/health`    | Health check geral do sistema.                    | Não           |
+| `GET`  | `/api/monitor/websocket` | Status do hub WebSocket (conexões, fila).         | Não           |
+| `GET`  | `/api/monitor/forja`     | Status do ComfyUI e fila de geração de imagens.   | Não           |
+| `GET`  | `/api/monitor/financial` | Métricas financeiras operacionais.                | Token interno |
+| `GET`  | `/arena-status`          | Estado atual da arena (fila, duelo em andamento). | Não           |
 
 ---
 

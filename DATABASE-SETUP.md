@@ -24,19 +24,19 @@ DB_DATABASE=krawz_arena
 
 ### Tabelas Principais
 
-| Tabela                           | Descrição                                                                   |
-| -------------------------------- | --------------------------------------------------------------------------- |
-| `jogadores`                      | Perfil, saldo KK, autenticação Google, link de afiliado                     |
-| `campeoes`                       | DNA, nível, atributos, status, URL de arte, total_ressurreicoes             |
-| `duelos`                         | Partidas ativas ou recém concluídas                                         |
-| `historico_duelos`               | Log completo de turnos e resultados (analytics)                             |
-| `transacoes_saque`               | Histórico de saques PIX com fee de 10%                                      |
-| `transacoes_deposito_pix`        | Cobranças PIX geradas e seu status de confirmação                           |
-| `audit_pagamentos`               | Auditoria de todas as operações financeiras (IP, user-agent, referência)    |
-| `transacoes_comissao_afiliado`   | Comissões de 5% pagas ao afiliado por saque do indicado                     |
-| `torneira_ads`                   | Anúncios e campanhas disponíveis no faucet                                  |
-| `torneira_claims`                | Histórico de KK creditado por visualização de anúncio                       |
-| `matchmaking_stats`              | Estatísticas de matchmaking por jogador                                      |
+| Tabela                         | Descrição                                                                |
+| ------------------------------ | ------------------------------------------------------------------------ |
+| `jogadores`                    | Perfil, saldo KK, autenticação Google, link de afiliado                  |
+| `campeoes`                     | DNA, nível, atributos, status, URL de arte, total_ressurreicoes          |
+| `duelos`                       | Partidas ativas ou recém concluídas                                      |
+| `historico_duelos`             | Log completo de turnos e resultados (analytics)                          |
+| `transacoes_saque`             | Histórico de saques PIX com fee de 10%                                   |
+| `transacoes_deposito_pix`      | Cobranças PIX geradas e seu status de confirmação                        |
+| `audit_pagamentos`             | Auditoria de todas as operações financeiras (IP, user-agent, referência) |
+| `transacoes_comissao_afiliado` | Comissões de 5% pagas ao afiliado por saque do indicado                  |
+| `torneira_ads`                 | Anúncios e campanhas disponíveis no faucet                               |
+| `torneira_claims`              | Histórico de KK creditado por visualização de anúncio                    |
+| `matchmaking_stats`            | Estatísticas de matchmaking por jogador                                  |
 
 O projeto utiliza pool de conexões via `mysql2/promise` exportado em `@db/database`.
 

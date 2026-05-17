@@ -84,12 +84,12 @@ A Torneira é o sistema de faucet do jogo: o jogador assiste anúncios e ganha K
 
 ## Status dos Campeões
 
-| Status         | Descrição                                         |
-| -------------- | ------------------------------------------------- |
-| `na_fila`      | Na fila do Coliseu aguardando ou em combate       |
-| `disponivel`   | Na Mão do Jogador (nível 6 ou após ressurreição)  |
-| `derrotado`    | No cemitério — pode ser ressuscitado              |
-| `em_tecelagem` | Em processo de geração de arte por IA             |
+| Status         | Descrição                                        |
+| -------------- | ------------------------------------------------ |
+| `na_fila`      | Na fila do Coliseu aguardando ou em combate      |
+| `disponivel`   | Na Mão do Jogador (nível 6 ou após ressurreição) |
+| `derrotado`    | No cemitério — pode ser ressuscitado             |
+| `em_tecelagem` | Em processo de geração de arte por IA            |
 
 ## Sistema de Combate
 
