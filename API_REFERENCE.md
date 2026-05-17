@@ -2,62 +2,93 @@
 
 A API do Krawz Arena é dividida em duas frentes principais:
 
-1. **REST API**: Para autenticação, criação de perfis, campeões, estatísticas, e match-making.
-2. **WebSocket API**: Um canal de comunicação persistente de ultra-baixa latência para o decorrer dos combates (duelos em tempo real).
+1. **REST API**: Para autenticação, criação de perfis, campeões, economia e histórico de duelos.
+2. **WebSocket API**: Canal persistente de baixa latência para o estado em tempo real dos combates.
 
-## 🚀 1. REST API
-
-### 📡 Rotas Principais
-
-Todas as chamadas requerem header assinado quando protegidas:
+Todas as chamadas protegidas requerem o header:
 `Authorization: Bearer <seu_jwt_token>`
 
-#### Campeões & Jogador
+---
 
-| Método | Rota                   | Descrição                                        | Auth |
-| ------ | ---------------------- | ------------------------------------------------ | ---- |
-| `POST` | `/api/player/register` | Cria uma nova conta.                             | Não  |
-| `POST` | `/api/player/login`    | Retorna um token JWT.                            | Não  |
-| `GET`  | `/api/player/profile`  | Busca os dados da conta.                         | Sim  |
-| `POST` | `/api/champions/forge` | Cria um novo campeão usando ComfyUI (Imagem AI). | Sim  |
-| `GET`  | `/api/champions/:id`   | Detalhes completos de um campeão e atributos.    | Sim  |
+## 🔐 Autenticação
 
-#### Duelos & Ranking
+| Método | Rota                                | Descrição                                                       | Auth |
+| ------ | ----------------------------------- | --------------------------------------------------------------- | ---- |
+| `POST` | `/api/players/register`             | Cria conta com apelido + senha.                                 | Não  |
+| `POST` | `/api/players/login`                | Retorna JWT (login com apelido/senha).                          | Não  |
+| `POST` | `/api/players/auth/google`          | Login via Google OAuth. Retorna JWT ou `requires_registration`. | Não  |
+| `POST` | `/api/players/auth/google/register` | Completa o registro para novos usuários Google.                 | Não  |
 
-| Método | Rota                    | Descrição                                         | Auth |
-| ------ | ----------------------- | ------------------------------------------------- | ---- |
-| `POST` | `/api/duel/queue`       | Coloca o jogador/campeão na fila de Match-Making. | Sim  |
-| `GET`  | `/api/leaderboard`      | Ranking de pontuação e vitórias dos jogadores.    | Não  |
-| `GET`  | `/api/duel/history/:id` | Histórico de duelos para exibir análises.         | Não  |
+---
 
-## ⚡ 2. WebSocket API (Combate em Tempo Real)
+## 👤 Perfil do Jogador
 
-A comunicação durante os combates ocorre integralmente no protocolo `ws://` ou `wss://` da nossa infraestrutura escalável.
+| Método | Rota                                  | Descrição                               | Auth |
+| ------ | ------------------------------------- | --------------------------------------- | ---- |
+| `GET`  | `/api/players/me`                     | Dados do perfil autenticado.            | Sim  |
+| `GET`  | `/api/players/me/avatar`              | URL do avatar atual.                    | Sim  |
+| `POST` | `/api/players/me/avatar`              | Atualiza avatar.                        | Sim  |
+| `GET`  | `/api/players/me/active-champions`    | Lista campeões em combate.              | Sim  |
+| `GET`  | `/api/players/me/forge-status`        | Status da Forja (geração de imagem IA). | Sim  |
+| `GET`  | `/api/players/me/available-champions` | Campeões disponíveis na Mão do Jogador. | Sim  |
+| `GET`  | `/api/players/:id/stats`              | Estatísticas de combate de um jogador.  | Sim  |
+| `GET`  | `/api/players/r/:apelido`             | Link de referral do jogador.            | Não  |
+| `GET`  | `/api/players/me/afiliados`           | Lista de referrals do jogador.          | Sim  |
 
-### Conexão e Autenticação
+---
 
-Ao se conectar em `wss://api.krawz.net/arena`, o cliente deve emitir um primeiro payload para se identificar e provar que faz parte de um duelo em andamento:
+## ⚔️ Campeões
 
-```json
-{
-    "type": "authenticate",
-    "payload": {
-        "token": "eyJhbGci...",
-        "match_id": "math_xyz123"
-    }
-}
-```
+| Método   | Rota                                  | Descrição                                         | Auth |
+| -------- | ------------------------------------- | ------------------------------------------------- | ---- |
+| `POST`   | `/api/champions/create`               | Cria um campeão com imagem gerada por IA (Forja). | Sim  |
+| `POST`   | `/api/champions/create-random-batch`  | Cria lote de campeões aleatórios.                 | Sim  |
+| `GET`    | `/api/champions`                      | Lista todos os campeões do jogador.               | Sim  |
+| `GET`    | `/api/champions/:id`                  | Detalhes completos de um campeão.                 | Sim  |
+| `DELETE` | `/api/champions/:id`                  | Remove um campeão.                                | Sim  |
+| `POST`   | `/api/champions/:id/queue`            | Coloca campeão na fila da arena.                  | Sim  |
+| `POST`   | `/api/champions/:id/dequeue`          | Remove campeão da fila.                           | Sim  |
+| `GET`    | `/api/champions/hand`                 | Mão do Jogador (campeões Nível 6 disponíveis).    | Sim  |
+| `POST`   | `/api/champions/:id/return-to-combat` | Recoloca campeão Lv6 na fila do coliseu.          | Sim  |
+| `POST`   | `/api/champions/:id/sell`             | Vende campeão ao servidor (100% do valor em KK).  | Sim  |
+| `POST`   | `/api/champions/withdraw`             | Saque PIX do saldo KK (fee 10%).                  | Sim  |
+| `GET`    | `/api/champions/withdraw/history`     | Histórico de saques.                              | Sim  |
 
-### Eventos Recebidos (Server ➔ Client)
+---
 
-- `duel_update`: Atualizações de vida, buffs, e quem deve jogar.
-- `combat_log`: Informação do que acabou de acontecer ("Ataque Crítico (-25 HP)").
-- `duel_ended`: A match terminou e os rankings estão sendo processados.
+## 📜 Duelos
 
-### Ações Enviadas (Client ➔ Server)
+| Método | Rota                 | Descrição                        | Auth |
+| ------ | -------------------- | -------------------------------- | ---- |
+| `GET`  | `/api/duels/history` | Histórico geral de duelos.       | Não  |
+| `GET`  | `/api/duels/:id`     | Detalhes de um duelo específico. | Não  |
 
-- `action`: Executa um ataque básico defesa, etc.
-- `use_skill`: Utiliza uma habilidade específica de classe.
+---
+
+## 🌐 Público
+
+| Método | Rota                    | Descrição                              | Auth |
+| ------ | ----------------------- | -------------------------------------- | ---- |
+| `GET`  | `/api/public/champions` | Lista pública de campeões em destaque. | Não  |
+| `GET`  | `/api/config/google`    | Client ID do Google OAuth (frontend).  | Não  |
+
+---
+
+## ⚡ WebSocket (Estado em Tempo Real)
+
+Conecte-se a `ws://<host>/ws` para receber broadcasts do estado da arena.
+
+### Payloads do Servidor
+
+Todos os eventos são objetos JSON. O campo `type` identifica o evento:
+
+| `type`         | Descrição                                              |
+| -------------- | ------------------------------------------------------ |
+| `arena_state`  | Estado completo da arena (campeões, HP, turno, buffs). |
+| `duel_started` | Novo duelo iniciado — contém IDs dos campeões.         |
+| `duel_ended`   | Duelo encerrado — contém vencedor e dados de evolução. |
+
+O servidor faz broadcast automático de `arena_state` após cada pulso de combate.
 
 **Exemplo de Envio:**
 
