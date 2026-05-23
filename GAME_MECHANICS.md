@@ -75,10 +75,13 @@ A Torneira é o sistema de faucet do jogo: o jogador assiste anúncios e ganha K
 
 ## Cemitério e Ressurreição
 
+O cemitério é uma **galeria global**. Cartas de todos os jogadores aparecem juntas.
+
 - Cartas derrotadas vão para o cemitério com status `derrotado`.
-- O jogador pode ressuscitar qualquer carta morta pagando **1 KK**:
+- Qualquer jogador autenticado pode **ressuscitar qualquer alma** pagando **1 KK**:
     - A carta volta ao **nível 1**.
     - Recebe **+1 em um atributo permanente aleatório** (atk, def, regen ou fúria).
+    - Se a carta pertencia a **outro jogador**, a **posse é transferida** para quem pagou o ritual.
     - Status muda para `na_fila` (pronta para duelar novamente).
 - O servidor registra o `total_ressurreicoes` de cada campeão.
 
@@ -98,6 +101,26 @@ O combate é gerido por WebSocket de baixa latência. Cada turno é dividido em:
 1. **Ação padrão**: ataque base com rolagem de dado D12 ou D16 conforme atributos.
 2. **Uso de habilidades**: aplicação de habilidades ativas que consomem mana/energia ou aplicam buffs e debuffs.
 3. **Resolução do turno**: o motor resolve a ação, aplica buffs persistentes e emite broadcast de estado para todos os clientes.
+
+## Catálogo de Habilidades
+
+O sistema registra **40 habilidades únicas** mapeadas no `skill_registry.js`. Exemplos:
+
+| Habilidade                      | Tipo                 |
+| ------------------------------- | -------------------- |
+| Ressurreição                    | Passiva especial     |
+| Voar / Rasante                  | Passiva de evasão    |
+| Fúria Vingativa                 | Buff de ataque       |
+| Barreira / Baluarte Refletor    | Buff defensivo       |
+| Peçonha Necrótica / Veneno      | Dano por turno       |
+| Caos / Entropia                 | Debuff de controle   |
+| Égide Anímica                   | Escudo mágico        |
+| Colheita de Almas               | Dreno de vida        |
+| Julgamento dos Céus             | Dano em área         |
+| Mergulho Predatório             | Ataque penetrante    |
+| Olhar Cristalino                | Reduzão de defesa    |
+| Toque Petrificante              | Paralisia temporária |
+| Pacto de Alma / Pacto Entrópico | Efeito duplo         |
 
 ### Habilidades Disponíveis (seleção)
 

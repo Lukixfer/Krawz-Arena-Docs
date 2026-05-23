@@ -12,12 +12,13 @@ Todas as chamadas protegidas requerem o header:
 
 ## 🔐 Autenticação
 
-| Método | Rota                                | Descrição                                                       | Auth |
-| ------ | ----------------------------------- | --------------------------------------------------------------- | ---- |
-| `POST` | `/api/players/register`             | Cria conta com apelido + senha.                                 | Não  |
-| `POST` | `/api/players/login`                | Retorna JWT (login com apelido/senha).                          | Não  |
-| `POST` | `/api/players/auth/google`          | Login via Google OAuth. Retorna JWT ou `requires_registration`. | Não  |
-| `POST` | `/api/players/auth/google/register` | Completa o registro para novos usuários Google.                 | Não  |
+| Método | Rota                                    | Descrição                                                                  | Auth |
+| ------ | --------------------------------------- | -------------------------------------------------------------------------- | ---- |
+| `POST` | `/api/auth/register`                    | Cria conta local com apelido + senha.                                      | Não  |
+| `POST` | `/api/auth/login`                       | Login local — retorna JWT.                                                 | Não  |
+| `POST` | `/api/players/auth/google`              | Login via Google OAuth — retorna JWT ou `requires_registration`.           | Não  |
+| `POST` | `/api/players/auth/google/register`     | Completa o registro para novos usuários Google.                            | Não  |
+| `POST` | `/api/players/auth/google/accept-terms` | Aceita os termos de uso (obrigatório no primeiro acesso via Google OAuth). | Não  |
 
 ---
 
@@ -67,12 +68,13 @@ Todas as chamadas protegidas requerem o header:
 
 ## 💰 Pagamentos PIX
 
-| Método | Rota                                   | Descrição                                                 | Auth |
-| ------ | -------------------------------------- | --------------------------------------------------------- | ---- |
-| `POST` | `/api/payments/pix/deposito`           | Gera cobrança PIX (1 BRL = 1 KK, mínimo 5 BRL).           | Sim  |
-| `POST` | `/api/payments/pix/webhook`            | Webhook de confirmação de pagamento (Asaas/providers).    | Não  |
-| `POST` | `/api/payments/pix/demo/confirmar`     | Confirma pagamento manualmente (apenas fora de produção). | Não  |
-| `GET`  | `/api/payments/pix/status/:externalId` | Status de uma cobrança PIX.                               | Sim  |
+| Método | Rota                                       | Descrição                                                                           | Auth |
+| ------ | ------------------------------------------ | ----------------------------------------------------------------------------------- | ---- |
+| `POST` | `/api/payments/pix/deposit`                | Gera cobrança PIX (1 BRL = 1 KK, mínimo 5 BRL).                                     | Sim  |
+| `GET`  | `/api/payments/pix/deposit/status/:pix_id` | Status de uma cobrança PIX pelo ID interno.                                         | Sim  |
+| `GET`  | `/api/payments/pix/deposit/history`        | Histórico de depósitos do jogador.                                                  | Sim  |
+| `POST` | `/api/payments/pix/webhook`                | Webhook de confirmação de pagamento (Asaas/providers).                              | Não  |
+| `POST` | `/api/payments/pix/demo/confirmar`         | Confirma pagamento manualmente (apenas fora de produção, `NODE_ENV != production`). | Sim  |
 
 ---
 
@@ -99,32 +101,42 @@ Todas as chamadas protegidas requerem o header:
 
 ## 🪦 Cemitério
 
-| Método | Rota                    | Descrição                                      | Auth |
-| ------ | ----------------------- | ---------------------------------------------- | ---- |
-| `GET`  | `/api/cemetery`         | Lista cartas do jogador no cemitério.          | Sim  |
-| `POST` | `/api/cemetery/buy/:id` | Ressuscita uma carta derrotada (custo: 1 KK).  | Sim  |
-| `GET`  | `/api/cemetery/public`  | Cemitério público — últimas cartas derrotadas. | Não  |
+> O cemitério é uma **galeria global**. Qualquer jogador autenticado vê todas as almas derrotadas.
+> Ao ressuscitar uma carta de outro jogador, a posse é transferida para quem pagou o ritual.
+
+| Método | Rota                    | Descrição                                                                                              | Auth |
+| ------ | ----------------------- | ------------------------------------------------------------------------------------------------------ | ---- |
+| `GET`  | `/api/cemetery`         | Lista todas as cartas derrotadas (de todos os jogadores). Campo `dono_apelido` indica o dono original. | Sim  |
+| `POST` | `/api/cemetery/buy/:id` | Ressuscita/reclama uma alma (custo: 1 KK). Transfere a posse se for de outro jogador.                  | Sim  |
 
 ---
 
-## 🌐 Público
+## 🌐 Público e Arena
 
-| Método | Rota                    | Descrição                              | Auth |
-| ------ | ----------------------- | -------------------------------------- | ---- |
-| `GET`  | `/api/public/champions` | Lista pública de campeões em destaque. | Não  |
-| `GET`  | `/api/config/google`    | Client ID do Google OAuth (frontend).  | Não  |
+| Método | Rota                    | Descrição                                                                   | Auth |
+| ------ | ----------------------- | --------------------------------------------------------------------------- | ---- |
+| `GET`  | `/api/public/champions` | Lista pública de campeões em destaque (até 5 000 resultados).               | Não  |
+| `GET`  | `/api/config/google`    | Client ID do Google OAuth para uso no frontend.                             | Não  |
+| `GET`  | `/api/game-content`     | Habilidades, signos e elementos do banco (grimório dinâmico).               | Não  |
+| `GET`  | `/arena-status`         | Estado atual do duelo em andamento (snapshot do `duelState`).               | Não  |
+| `GET`  | `/ver-filas`            | Lista de campeões com status `na_fila` (nível, elemento, dono).             | Não  |
+| `GET`  | `/arena-stats`          | Totais (criados, vivos, cemitério, tesouro) e ranking top 6 por polaridade. | Não  |
 
 ---
 
 ## 🩺 Monitoramento
 
-| Método | Rota                     | Descrição                                         | Auth          |
-| ------ | ------------------------ | ------------------------------------------------- | ------------- |
-| `GET`  | `/api/monitor/health`    | Health check geral do sistema.                    | Não           |
-| `GET`  | `/api/monitor/websocket` | Status do hub WebSocket (conexões, fila).         | Não           |
-| `GET`  | `/api/monitor/forja`     | Status do ComfyUI e fila de geração de imagens.   | Não           |
-| `GET`  | `/api/monitor/financial` | Métricas financeiras operacionais.                | Token interno |
-| `GET`  | `/arena-status`          | Estado atual da arena (fila, duelo em andamento). | Não           |
+> As rotas de saúde financeira e auditoria exigem o header `X-Monitor-Token` com o valor de `FINANCIAL_MONITOR_TOKEN` do ambiente.
+
+| Método | Rota                                      | Descrição                                                               | Auth          |
+| ------ | ----------------------------------------- | ----------------------------------------------------------------------- | ------------- |
+| `GET`  | `/api/monitor/health`                     | Health check geral (status, versão, ambiente).                          | Não           |
+| `GET`  | `/api/monitor/websocket`                  | Status do hub WebSocket (conexões ativas, fila).                        | Não           |
+| `GET`  | `/api/monitor/forja`                      | Status do ComfyUI: fila, ocupação e cartas sem imagem.                  | Não           |
+| `GET`  | `/api/monitor/extended`                   | Métricas operacionais estendidas (health score, pressão de fila, heap). | Não           |
+| `GET`  | `/api/monitor/payments-health`            | Saúde do subsistema de pagamentos (saldos, transações recentes).        | Token interno |
+| `GET`  | `/api/monitor/payments-audit`             | Log de auditoria de pagamentos (depósitos e saques).                    | Token interno |
+| `POST` | `/api/monitor/repair-missing-card-images` | Dispara reparo de cartas sem imagem (aciona re-forja das afetadas).     | Token interno |
 
 ---
 

@@ -1,23 +1,25 @@
 # Krawz Arena Docs
 
-[![Status](https://img.shields.io/badge/Status-Alpha%200.1.0-orange)](#)
+[![Status](https://img.shields.io/badge/Status-v0.1.0%20Alpha-orange)](#)
 [![Stack](https://img.shields.io/badge/Stack-Node%20%2B%20Express%20%2B%20WS-blue)](#)
-[![Testes](https://img.shields.io/badge/Testes-64%2B%20arquivos-brightgreen)](#)
+[![Testes](https://img.shields.io/badge/Testes-64%20arquivos-brightgreen)](#)
+[![Habilidades](https://img.shields.io/badge/Habilidades-40%2B%20únicas-purple)](#)
 
 Repositório público de documentação do Krawz Arena, um card game/RPG com combate em tempo real, economia in-game e integração com geração de imagem por IA.
 
-Este repositório é focado em apresentação técnica e produto para comunidade, parceiros e patrocinadores.
+Este repositório é focado em apresentação técnica e produto para comunidade, parceiros e patrocinadores. **Atualizado: Maio 2026.**
 
 ## O que já está entregue
 
-- Combate em tempo real com WebSocket e 38+ habilidades únicas (incluindo ressurreição)
-- Sistema de habilidades com alta cobertura de testes (64+ arquivos de teste)
+- Combate em tempo real com WebSocket e **40 habilidades únicas** registradas (incluindo ressurreição, Égide Anímica, Colheita de Almas, Julgamento dos Céus e mais)
+- Sistema de habilidades com alta cobertura de testes (64 arquivos de teste cobrindo backend e frontend)
 - Progressão de cartas com ciclo da Mão do Jogador no nível 6
 - Economia com venda de cartas, depósito PIX, saldo interno e saque PIX com fee
 - Programa de afiliados com comissão de 5% sobre saques
 - Torneira — sistema de faucet publicitário onde jogadores ganham KK visualizando anúncios
 - Chat global via WebSocket com moderação de Game Master
-- API REST organizada em rotas e serviços
+- Cemitério global: qualquer jogador pode ressuscitar (e reclamar a posse de) almas derrotadas
+- API REST organizada em rotas e serviços; monitoramento operacional e financeiro embutidos
 
 ## Navegação rápida
 
@@ -31,12 +33,13 @@ Este repositório é focado em apresentação técnica e produto para comunidade
 ## Estado técnico atual
 
 - Backend: Node.js + Express + MySQL + ws
-- Frontend: Vanilla JavaScript
-- Testes automatizados: 64+ arquivos de teste cobrindo backend e frontend
-- Destaques de cobertura recentes:
+- Frontend: Vanilla JavaScript (sem frameworks — performance máxima)
+- Testes automatizados: **64 arquivos de teste** cobrindo backend e frontend
+- Destaques de cobertura (últimas medições):
     - `PixService.js`: 97.54%
     - `websocket_manager.js`: 86.87%
     - `TorneiraService.js`: alta cobertura via suite dedicada
+- Módulos de monitoramento operacional e financeiro em produção (`/api/monitor/`)
 
 ## Execução local
 

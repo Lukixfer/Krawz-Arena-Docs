@@ -8,7 +8,7 @@ Este documento separa o que está implementado hoje do que está no backlog.
 
 - Arena com duelos em tempo real (Coliseu — sala única global)
 - Motor de combate com buffs/debuffs e resolução no backend
-- 38+ habilidades únicas: buffs, sangramento, fúria, voo, regeneração, **ressurreição**
+- **40 habilidades únicas** registradas: buffs, sangramento, fúria, voo, regeneração, ressurreição, Égide Anímica, Colheita de Almas, Julgamento dos Céus, Mergulho Predatório, Olhar Cristalino, Toque Petrificante e mais
 - Progressão de carta por níveis (Lv1 a Lv6) com valor exponencial `V(n) = 2^(n-1)` KK
 - Coluna `total_ressurreicoes` em campeões para rastrear ressurreições em batalha
 - Estatísticas de matchmaking em `matchmaking_stats`
@@ -22,10 +22,12 @@ Este documento separa o que está implementado hoje do que está no backlog.
 
 ### Cemitério e Ressurreição
 
-- Cartas derrotadas ficam no cemitério com status `derrotado`
-- `GET /api/cemetery` para listar cartas do jogador no cemitério
-- `POST /api/cemetery/buy/:id` para ressuscitar uma carta (custo: 1 KK)
-- Ressurreição restaura a carta ao Lv1 com +1 em atributo permanente aleatório
+- Cartas derrotadas ficam no cemitério global com status `derrotado`
+- `GET /api/cemetery` lista **todas** as cartas derrotadas de todos os jogadores (galeria global de almas)
+- `POST /api/cemetery/buy/:id` ressuscita qualquer alma derrotada por 1 KK:
+    - Se a carta era de outro jogador, a **posse é transferida** para quem pagou o ritual
+    - A carta volta ao nível 1 com +1 em um atributo permanente aleatório (atk, def, regen ou fúria)
+    - O contador `total_ressurreicoes` do campeão é incrementado
 
 ### Pagamentos e compliance operacional
 
@@ -73,18 +75,21 @@ Este documento separa o que está implementado hoje do que está no backlog.
 ### Plataforma técnica
 
 - API REST em Express com organização por rotas e serviços
-- Persistência em MySQL
+- Persistência em MySQL com transações e `SELECT … FOR UPDATE` em operações financeiras
 - Comunicação em tempo real com `ws`
-- 64+ arquivos de testes automatizados cobrindo backend e frontend
-- Autenticação Google OAuth exclusiva + JWT emitido pelo backend
+- **64 arquivos de testes automatizados** cobrindo backend e frontend
+- Autenticação Google OAuth + login local (apelido/senha); JWT emitido pelo backend
 - Helmet, CORS e rate limiting globais e por rota
+- Monitoramento operacional via `/api/monitor/`: health, WebSocket, Forja, métricas estendidas, saúde financeira, auditoria de pagamentos e reparo de imagens faltantes
+- Rotas de estatísticas públicas: `/arena-stats` (totais + ranking Celestial/Abissal), `/ver-filas` (fila atual), `/api/game-content` (habilidades, signos e elementos do banco)
 
 ## Indicadores técnicos atuais
 
-- 64+ arquivos de teste
+- 64 arquivos de teste (backend e frontend)
 - `PixService.js`: 97.54% de cobertura
 - `websocket_manager.js`: 86.87% de cobertura
 - Torneira e Afiliados com suites de teste dedicadas
+- 40 habilidades registradas no `skill_registry.js` com mapeamento kebab→Title Case
 
 ## Backlog próximo
 

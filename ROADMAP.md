@@ -9,10 +9,14 @@ Este roadmap descreve os próximos passos de produto e engenharia com foco em en
 - ✅ Programa de afiliados com comissão automática
 - ✅ Torneira — faucet publicitário com campanhas de jogadores e moderação
 - ✅ Chat global com moderação de Game Master
-- ✅ 38+ habilidades incluindo ressurreição
-- ✅ Cemitério e ressurreição de cartas
+- ✅ **40 habilidades** incluindo ressurreição, Égide Anímica, Colheita de Almas, Julgamento dos Céus e mais
+- ✅ Cemitério global com transferência de posse ao ressuscitar
 - ✅ Leaderboard por desempenho de cartas
-- ✅ 64+ arquivos de testes automatizados
+- ✅ 64 arquivos de testes automatizados
+- ✅ Monitoramento operacional e financeiro (`/api/monitor/extended`, `/api/monitor/payments-health`, `/api/monitor/payments-audit`)
+- ✅ Histórico de depósitos PIX (`/api/payments/pix/deposit/history`)
+- ✅ Aceite de termos de uso via Google OAuth (`/api/players/auth/google/accept-terms`)
+- ✅ Reparo automático de cartas sem imagem (`POST /api/monitor/repair-missing-card-images`)
 
 ## Ciclo atual (Q2-Q3 2026)
 
